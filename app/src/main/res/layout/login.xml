@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:background="#ED0808"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:id="@+id/title"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:textSize="20sp"
+        android:layout_below="@id/title"
+        android:id="@+id/username"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"
+        android:padding="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:id="@+id/password"
+        android:layout_below="@id/username"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"
+        android:padding="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:layout_below="@id/password"
+        android:id="@+id/login"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/remember_me"
+        android:layout_below="@id/login"
+        android:text="Remember Me?"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/forgot_password"
+        android:text="Forgot Password?"
+        android:layout_below="@id/remember_me"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signin"
+        android:text="Create an Account?"
+        android:layout_below="@+id/forgot_password"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:layout_below="@id/signin"
+        android:id="@+id/register"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true" />
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/menu"
+    android:title="MainMenu"
+    android:icon="@mipmap/ic_launcher"
+    app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/menu1"
+        android:title="Menu1" />
+
+    <item
+        android:id="@+id/menu2"
+        android:title="Menu2" />
+
+    <item
+        android:id="@+id/menu3"
+        android:title="Menu3"/>
+
+    <item
+        android:id="@+id/submenu"
+        android:title="Submenu">
+
+        <menu>
+            <item
+                android:id="@+id/submenu1"
+                android:title="submenu1" />
+            <item
+                android:id="@+id/submenu2"
+                android:title="submenu2" />
+            <item
+                android:id="@+id/submenu3"
+                android:title="submenu3" />
+            <item
+                android:id="@+id/submenu4"
+                android:title="submenu4"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/logout"
+        android:title="logout" />
+</menu>

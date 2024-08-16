@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Registration Form"
+        android:padding="10dp"
+        android:gravity="center_horizontal"
+        android:background="#D31E11"
+        android:textColor="@color/white"
+        android:id="@+id/title"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name"
+        android:id="@+id/firstname"
+        android:layout_below="@id/title"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:layout_margin="10dp"
+        android:padding="5dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:id="@+id/email"
+        android:layout_below="@id/firstname"
+        android:textSize="20sp"
+        android:inputType="textEmailAddress"
+        android:layout_margin="10dp"
+        android:padding="5dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:id="@+id/password"
+        android:layout_below="@id/email"
+        android:textSize="20sp"
+        android:inputType="textPassword"
+        android:layout_margin="10dp"
+        android:padding="5dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:id="@+id/confirm"
+        android:layout_below="@+id/password"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:layout_margin="10dp" />
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/confirm"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_launcher"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:id="@+id/terms"
+        android:text="I Agree To The Terms and Conditions"
+        android:textSize="10sp"
+        android:layout_margin="10dp"
+        android:padding="5dp" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/terms"
+        android:layout_margin="10dp"
+        android:hint="Submit"
+        android:background="#03A9F4"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submit"
+        android:text="Hava an account?"
+        android:textSize="10sp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

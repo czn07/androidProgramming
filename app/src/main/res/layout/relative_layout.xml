@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/childview"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="childview childview childview"/>
+    <TextView
+        android:layout_alignBottom="@+id/childview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="child view"/>
+    <TextView android:layout_centerVertical="true"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="child view"/>
+    <TextView
+        android:layout_toRightOf="@+id/childview"
+        android:layout_alignBottom="@+id/childview"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="child view"/>
+    <TextView
+        android:layout_above="@+id/childview"
+
+        android:layout_alignRight="@+id/childview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="child view"/>
+    <TextView
+        android:layout_below="@+id/childview"
+        android:layout_alignLeft="@+id/childview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="child view"/>
+    <TextView
+        android:layout_toLeftOf="@+id/childview"
+        android:layout_alignBottom="@+id/childview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="xxxxxx"/>
+    <TextView
+        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="child view"/>
+    <TextView
+        android:id="@+id/bottomchild"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="child view xxxxxxxxxxxxxxxxxxxxxxxxxxxkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+    <TextView
+        android:layout_alignEnd="@+id/bottomchild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="child view"/>
+
+
+
+</RelativeLayout>
