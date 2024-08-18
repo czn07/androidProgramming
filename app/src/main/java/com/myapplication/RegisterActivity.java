@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -17,8 +18,23 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText firstname, email, password, confirm, username ;
@@ -69,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 //validation method call
                 if (emailValidation(email) && emptyFieldValidation(password)){
-
+                    postDate();
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("firstname", firstnameValue);
@@ -150,6 +166,67 @@ public class RegisterActivity extends AppCompatActivity {
     public static Bitmap getBitmap(byte[] bytes) {
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
     }
+
+    public void postDate(){
+        // ...
+
+// Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "https://softechnepal.com/exam/service.php?task=addStudent";
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        Log.i("response",response);
+                        Toast.makeText(RegisterActivity.this, "Response:"+response, Toast.LENGTH_SHORT).show();
+//                        parseData(response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+//                textView.setText("That didn't work!");
+            }
+        }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String, String>params = new HashMap<>();
+                params.put("username",firstname.getText().toString());
+                params.put("mobile",email.getText().toString());
+                params.put("address",password.getText().toString());
+                return params;
+            }
+        };
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
+
+    public void parseData(String data){
+        try {
+            JSONObject object = new JSONObject(data);
+            JSONArray result = object.getJSONArray("result");
+            ArrayList<Userinfo> list = new ArrayList<>();
+            for (int i = 0 ; i<result.length();i++){
+                Userinfo info = new Userinfo();
+                JSONObject obj = result.getJSONObject(i);
+                info.id= obj.getString("id");
+                info.firstname= obj.getString("name");
+                info.email= obj.getString("mobile");
+                info.address= obj.getString("address");
+                list.add(info);
+            }
+//            displayUsers(list);
+
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 
 }
 
